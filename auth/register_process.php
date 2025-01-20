@@ -1,0 +1,32 @@
+<?php
+require_once("../config.php");
+//Mulai session
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $name = $_POST["name"];
+    $password = $_POST["password"];
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+
+    $sql = "INSERT INTO users ( username, name, password)
+    VALUES ( 'username', 'name', 'hashedpassword')";
+    if ($conn->query($sql) == TRUE) {
+        //simpan notifikasi ke dalam session
+        $SESSION['notification'] = [
+            'type' => 'primary',
+            'messege'=> 'Registrasi Berhasil'
+        ];
+    }else{
+        $_SESSION['notification'] = [
+            'type' => 'danger',
+            'massege' => 'Gagal Registrasi: ' . mysqli_error($conn)
+        ];
+    }  
+    header('Location: login.php');
+    exit();
+    }
+
+    $conn->close();
+    ?>
