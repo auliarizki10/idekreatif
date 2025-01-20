@@ -18,8 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $_SESSION["role"] = $row["role"];
             $_SESSION["user_id"] = $row["user_id"];
             //set notifikasi selamat datang
-            $_SESSION['notification'] =[
-                'type'=> 'primary'
+            $_SESSION ['notification'] = [
+                'type' => 'primary',
                 'massage' => 'Selamat Datang Kembali!'
             ];
              // Redirect ke dashboard
