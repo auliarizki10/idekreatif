@@ -6,15 +6,14 @@ if($notification){
   unset($_SESSION['notification']);
 }
 
-if (isset($_SESSION["username"])|| isset($_SESSION[role])){
+if (isset($_SESSION["username"])|| isset($_SESSION["role"])){
   $SESSION['notification'] = [
-    'type' => 'danger'
-    'message' => 'Silahkan Logout Terlebih Dahuli!'
+    'type' => 'danger',
+    'message' => 'Silahkan Logout Terlebih Dahulu!'
   ];
   header('location:../dashboard.php');
 }
 ?>
-// kode php lainnya
 <!DOCTYPE html>
 <html lang="en">
   <head>
