@@ -25,17 +25,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
              // Redirect ke dashboard
              header('Location:../dasboard.php');
              exit();   
-        }else{
+        } else {
             // password salah
-            $_SESSION['notification'] =[
-                'type'=> 'danger'
+            $_SESSION['notification'] = [
+                'type'=> 'danger',
                 'massage' => 'Username atau Password salah'
             ];
         }
-    }else{
+    } else {
         //username tidak di temukan
-        $_SESSION['notification']=[
-            'type'=> 'denger'
+        $_SESSION['notification'] = [
+            'type'=> 'denger',
             'massage' => 'Username atau Password salah'
         ];
     }
