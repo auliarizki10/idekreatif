@@ -2,7 +2,7 @@
 session_start(); //inisialisasi Session
 //Ambil notifikasi jika ada, kemudian hapus dari sesi
 $notification =$_SESSION['notification'] ?? null;
-if($notification){
+if ($notification){
   unset($_SESSION['notification']);
 }
 
