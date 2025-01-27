@@ -92,3 +92,7 @@ include '.includes/toast_notification.php';
          </div>
       </div>
 </div>
+<!-- modal untuk hapus data kategori -->
+<div class="modal fade" id="daleteCategory_<? $category['category_id']; ?>"></div>
+<!--modal untuk update data kategori -->
+<a href="#" class="dropdwon-item" data-bs-toggle="modal" data-bs-target="#deleteCategory_<?= $category['category_id']; ?>"><i class="bx bx-trash me-2"></i>Delete</a>

@@ -9,10 +9,10 @@ session_start();
 //proses penambahan kategori baru
 if (isset($_POST['simpan'])) {
 //mengambil data nama kategori dari form
-$catergory_name = $_POST['category_name']
+    $catergory_name = $_POST['category_name']
 
 //query untuk menambahkan data ketegori ke dalam database
-$query = "INSERT INTO categories (category_name)";
+$query = "INSERT INTO categories (category_name) VALUES ('$catergory_name')";
 $exec = mysqli_query($conn, $query);
 
 // menyimpan notifikasi berhasil atau gagal ke dalam session
@@ -35,4 +35,5 @@ if ($exec) {
 
 //Redirect kembali ke halaman kategori
 header('Location: kategori.php');
+exit();
 }
