@@ -42,18 +42,21 @@ include '.includes/toast_notification.php';
                 <td>
                 <!--Dropdown untuk opsi edit dan delete-->
                <div class="dropdown">
-               <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="Dropdwon">
+               <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdwon">
                <i class="bx bx-dots-vertical-rounded"></i>
               </button>
               <div class="dropdown-menu">
               <a herf="#" class="dropdown-item" data-bs-toggle="modal"
              data-bs-target="#editCategory_<?= $category['category_id']; ?>">
-             <i class " bx bx-edit-alt me-2></i>">
-             data-bs-target="bx bx-transh me-2">edit</i>
+             <i class= "bx bx-edit-alt me-2"></i>
+             Edit</a>
              <a herf="#" class="dropdown-item" data-bs-toggle="modal"
              data-bs-target="#deleteCategory_<?= $category['category_id']; ?>">
-             <i class " bx bx-edit-alt me-2></i>">
-             data-bs-target="bx bx-transh me-2">Delete</i>
+             <i class= " bx bx-edit-alt me-2"></i> Delete </a>
+              </div>
+              </div>
+              </td>
+
              </tr>
              <!-- modal untuk hapus Data kategori-->
              <!-- modal untuk update data ketegory-->
@@ -92,7 +95,28 @@ include '.includes/toast_notification.php';
          </div>
       </div>
 </div>
+
 <!-- modal untuk hapus data kategori -->
-<div class="modal fade" id="daleteCategory_<? $category['category_id']; ?>"></div>
-<!--modal untuk update data kategori -->
-<a href="#" class="dropdwon-item" data-bs-toggle="modal" data-bs-target="#deleteCategory_<?= $category['category_id']; ?>"><i class="bx bx-trash me-2"></i>Delete</a>
+<div class="modal fade" id="daleteCategory_<? $category['category_id']; ?>" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class=""modal-header>
+            <h5 class="modal-title"> hapus kategori? </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal">
+    </button>
+      </div>
+        <div class="modal-body">   
+        <form action="proses_kategori.php" method="POST">
+          <div>
+            <p>Tindakan ini tidak bisa dibatalkan</p>
+            <input type="hidden" name="catID" value="<?=$category['category_id']; ?>">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" name="delete" class="btn btn-primary">Hapus</button>
+                      </div>
+                 </form> 
+              </div>
+           </div>
+       </div>
+    </div>
