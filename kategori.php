@@ -12,7 +12,7 @@ include '.includes/toast_notification.php';
             <h4>Data kategori</h4>
             <!-- tabel data kategori-->
              <button type= "button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#addCategory">
-                Tambah kategori
+Tambah kategori
              </button>
               </div>
               <div class="card-body">
