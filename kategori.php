@@ -120,7 +120,6 @@ include '.includes/toast_notification.php';
            </div>
        </div>
     </div>
-
     <!--modal untuk update data kategori --> 
     <div id="editCategory_<?= $category['category_id']; ?>" class="modal fade" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog" role="document">
