@@ -3,7 +3,7 @@ session_start();
 require_once("../config.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    $username = $_POST ["usename"];
+    $username = $_POST ["username"];
     $password = $_POST ["password"];
 
     $sql = "SELECT * FROM users WHERE username='$username'";
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             //set notifikasi selamat datang
             $_SESSION ['notification'] = [
                 'type' => 'primary',
-                'massage' => 'Selamat Datang Kembali!'
+                'message' => 'Selamat Datang Kembali!'
             ];
              // Redirect ke dashboard
              header('Location:../dasboard.php');
@@ -29,14 +29,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             // password salah
             $_SESSION['notification'] = [
                 'type'=> 'danger',
-                'massage' => 'Username atau Password salah'
+                'message' => 'Username atau Password salah'
             ];
         }
     } else {
         //username tidak di temukan
         $_SESSION['notification'] = [
-            'type'=> 'denger',
-            'massage' => 'Username atau Password salah'
+            'type'=> 'danger',
+            'message' => 'Username atau Password salah'
         ];
     }
     // Redirect kembali ke halaman login jika gagal
