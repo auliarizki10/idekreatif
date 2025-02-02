@@ -11,17 +11,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     $sql = "INSERT INTO users ( username, name, password)
-    VALUES ( 'username', 'name', 'hashedpassword')";
+    VALUES ( '$username', '$name', '$hashedPassword')";
     if ($conn->query($sql) == TRUE) {
         //simpan notifikasi ke dalam session
-        $SESSION['notification'] = [
+        $_SESSION['notification'] = [
             'type' => 'primary',
-            'messege'=> 'Registrasi Berhasil'
+            'message'=> 'Registrasi Berhasil'
         ];
-    }else{
+    } else {
         $_SESSION['notification'] = [
             'type' => 'danger',
-            'massege' => 'Gagal Registrasi: ' . mysqli_error($conn)
+            'massage' => 'Gagal Registrasi: ' . mysqli_error($conn)
         ];
     }  
     header('Location: login.php');
