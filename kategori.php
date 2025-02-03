@@ -5,21 +5,22 @@ include '.includes/header.php';
 include '.includes/toast_notification.php';
 ?>
 
-<div class="container-xxl flex-grow-1 container -p-y">
+<div class="container-xxl flex-grow-1 container-p-y">
     <!-- tabel data kategori -->
      <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
             <h4>Data kategori</h4>
-            <!-- tabel data kategori-->
-             <button type= "button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#addCategory">Tambah kategori
+            <!-- tombol untuk menambah kategori baru-->
+             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCategory">Tambah kategori
              </button>
+
               </div>
               <div class="card-body">
-               <div class= "table-responsive text-nowrap">
-               <table id="datatable"class="table table-hover">
+               <div class="table-responsive text-nowrap">
+               <table id="datatable" class="table table-hover">
                 <thead>
                     <tr class="text-center">
-                     <th widht=50px>#</th>
+                     <th width="50px">#</th>
                      <th>Nama</th>
                      <th width="150px">pilihan</th>
                     </tr>
@@ -30,7 +31,7 @@ include '.includes/toast_notification.php';
               <?php
               $index = 1;
               $query = "SELECT * FROM categories";
-              $exec = mysqli_query($conn, $query);
+              $exec = mysqli_query($conn,$query);
               while ($category = mysqli_fetch_assoc($exec)) :
               ?>
               <tr>
@@ -40,7 +41,7 @@ include '.includes/toast_notification.php';
                 <td>
                 <!--Dropdown untuk opsi edit dan delete-->
                <div class="dropdown">
-               <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdwon">
+               <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                <i class="bx bx-dots-vertical-rounded"></i>
               </button>
               <div class="dropdown-menu">
@@ -56,7 +57,7 @@ include '.includes/toast_notification.php';
              </tr>
 
              <!-- modal untuk hapus data kategori -->
-<div class="modal fade" id="deleteCategory_<? $category['category_id']; ?>" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="deleteCategory_<?= $category['category_id']; ?>" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -95,10 +96,10 @@ include '.includes/toast_notification.php';
                <div class="form-group">
                 <label>Nama kategori</label>
                 <!-- input untuk nama kategori -->
-                 <input type="text" value= "<?= $category['category_name']; ?>" name=category_name class="form-control">
+                 <input type="text" value= "<?= $category['category_name']; ?>" name="category_name" class="form-control">
                </div>
                <div class= "modal-footer">
-                <button type="button" class= " btn btn-secondary" data-bs-dismiss="modal">Batal
+                <button type="button" class= "btn btn-secondary" data-bs-dismiss="modal">Batal
                 </button>
                 <button type="submit" name="update" class="btn btn-warning">update</button>
                </div>
@@ -110,19 +111,20 @@ include '.includes/toast_notification.php';
 
  <?php endwhile; ?>
              </tbody>
-                  </table>
-                      </div>
-                           </div>
-                               </div>
-                                    </div>
-             <?php include '.includes/footer.php'; ?>.
+                </table>
+                    </div>
+                       </div>
+                          </div>
+                            </div>
+             <?php include '.includes/footer.php'; ?>
 
 
              <!-- modal untuk tambah data kategori -->
               <div class="modal fade" id="addCategory"  tabindex="-1" aria-hidden="true">
               <div class="modal-dialog" role="document">
               <div class="modal-content">
-              <div class="modal-title"> Tambah Data</h5>
+              <div class="modal-header">
+              <h5 class="modal-title"> Tambah Data</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal">
               </button>
                    </div>

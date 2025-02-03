@@ -56,13 +56,13 @@ if(isset($_POST['delete'])) {
     header('Location: kategori.php');
     exit(); 
 }
-if(issert($_POST['update'])) {
+if(isset($_POST['update'])) {
     //mengambi data dari form pembaruan
     $catID = $_POST['catID'];
     $category_name = $_POST['category_name'];
 
     //query untuk memperbarui data kategori berdasarkan is
-    $query = "UPDATE categories SET category_name '$category_name' WHERE category_id= '$catID'";
+    $query = "UPDATE categories SET category_name ='$category_name' WHERE category_id= '$catID'";
     $exec = mysqli_query($conn, $query);
 
     //menyimpan notifikasi keberhasilan atau kegagalan ke dalam session
