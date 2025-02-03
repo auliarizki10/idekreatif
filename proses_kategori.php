@@ -24,7 +24,7 @@ if ($exec) {
 } else {
     $_SESSION['notification'] = [
         'type' => 'danger', //jenis notifikasi (contoh:danger untuk kegagalan)
-        'massage' => 'gagal menambah kategori: ' .mysqli_error($conn)
+        'message' => 'gagal menambah kategori: ' .mysqli_error($conn)
     ];
 }
 
