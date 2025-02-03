@@ -38,7 +38,7 @@ if(isset($_POST['delete'])) {
     $catID = $_POST['catID'];
 
     //Query untuk menghapus kategori berdasarkan ID
-    $exec = mysqli_query($conn, "DELETE FROM categoriess WHERE category_id='$catID'");
+    $exec = mysqli_query($conn, "DELETE FROM categories WHERE category_id='$catID'");
 
     if ($exec) {
       $_SESSION['notification'] = [

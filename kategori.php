@@ -8,7 +8,7 @@ include '.includes/toast_notification.php';
 <div class="container-xxl flex-grow-1 container -p-y">
     <!-- tabel data kategori -->
      <div class="card">
-        <div class="card-header d-flex justify-content-between align-item-center">
+        <div class="card-header d-flex justify-content-between align-items-center">
             <h4>Data kategori</h4>
             <!-- tabel data kategori-->
              <button type= "button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#addCategory">Tambah kategori
@@ -16,12 +16,12 @@ include '.includes/toast_notification.php';
               </div>
               <div class="card-body">
                <div class= "table-responsive text-nowrap">
-               <table id="datatable"class="table tablek-hover">
+               <table id="datatable"class="table table-hover">
                 <thead>
                     <tr class="text-center">
                      <th widht=50px>#</th>
                      <th>Nama</th>
-                     <th widht="150px">pilihan</th>
+                     <th width="150px">pilihan</th>
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
@@ -56,7 +56,7 @@ include '.includes/toast_notification.php';
              </tr>
 
              <!-- modal untuk hapus data kategori -->
-<div class="modal fade" id="daleteCategory_<? $category['category_id']; ?>" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="deleteCategory_<? $category['category_id']; ?>" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -102,11 +102,11 @@ include '.includes/toast_notification.php';
                 </button>
                 <button type="submit" name="update" class="btn btn-warning">update</button>
                </div>
-            </form>
-           </div>
-        </div>
-     </div>
- </div>
+               </form>
+               </div>
+               </div>
+              </div>
+              </div>
 
  <?php endwhile; ?>
              </tbody>
