@@ -81,7 +81,7 @@ include '.includes/toast_notification.php';
                                                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">batal</button>
                                                     <button type="submit" name="delete" class="'btn btn-primary">hapus</button>
                                                  </div>
-                                            </form>
+                                             </form>
                                         </div>
                                     </div>
                                 </div>
