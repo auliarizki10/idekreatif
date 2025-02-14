@@ -27,7 +27,7 @@ if ($result->num_rows >0) {
         <!-- form untuk mengedit postingan -->
         <div class="col-md-10">
             <div class="card mb-4">
-                < class="card-body">
+                <class="card-body">
                     <!-- formulir menggunakan metode POST untuk mengirim data -->
                      <form  method="POST"action="proses_post.php" enctype="multipart/form-data">
                         <!-- input tersembunyi untuk menyimpan ID postingan -->

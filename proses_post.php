@@ -107,12 +107,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
     } else {
         //jika tidak ada file baru, gunakan gambar lama
         $imagePathQuery = "SELECT image_path FROM posts WHERE id_post = $postId";
-        $result = $conn->query($imagePathquery);
-        $image_path = ($result->num_rows > 0) ? $result->fetch_assoc()['image_path'] : null;
+        $result = $conn->query($imagePathQuery);
+        $imagePath = ($result->num_rows > 0) ? $result->fetch_assoc()['image_path'] : null;
     }
 
     //update data postingan di database
-    $queryUpdate = "UPDATE posts SET post_titlle = '$postTitle',content = '$content', category_id = $categoryId,image_path = '$imagePath' WHERE id_post = $postId";
+    $queryUpdate = "UPDATE posts SET post_titlle = '$postTitle',content = '$content', category_id = $categoryId, image_path = '$imagePath' WHERE id_post = $postId";
 
     if ($conn->query($queryUpdate) === TRUE) {
         //notifikasi berhasil

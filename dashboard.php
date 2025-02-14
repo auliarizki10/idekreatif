@@ -47,12 +47,13 @@ include '.includes/toast_notification.php';
                                 <td>
                                     <div class="dropdwon">
                                         <!-- Tombol dropdown untuk pilihan -->
-                                    </div>
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"> <i class = "bx bx-dots-dots-vertical-rounded"></i></button>
+                                    
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"> <i class = "bx bx-dots-vertical-rounded"></i></button>
                                     <!-- menu dropdown -->
                                      <div class="dropdown-menu">
+
                                         <!-- pilihan edit -->
-                                         <a href="edit_post.php?post_id=<?= $post['id_post']; ?> "class="dropdown-item">
+                                         <a href="edit_post.php?post_id=<?= $post['id_post']; ?> " class="dropdown-item">
                                             <i class="'bx bx-edit-alt me-2"></i> Edit
                                          </a>
                                          <!-- pilihan delete -->
