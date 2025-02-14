@@ -32,9 +32,9 @@ include '.includes/toast_notification.php';
                          <?php
                          $index = 1; //variabel untuk nomor urut
                          /*Query untuk mengambil data dari tabel posts, users, dan categories */
-                         $query = "SELECT posts.*, users.name as user_name, categories.category_name FROM posts INNER JOIN users ON posts.user_id = users_id LEFT JOIN categories ON posts.category_id = categories.category_id WHERE posts.user_id = $userId";
+                         $query = "SELECT posts.*, users.name as user_name, categories.category_name FROM posts INNER JOIN users ON posts.user_id = users.user_id LEFT JOIN categories ON posts.category_id = categories.category_id WHERE posts.user_id = $userId";
                          //eksekusi query
-                         $exec =mysqli_query($conn, $query);
+                         $exec = mysqli_query($conn, $query);
 
                          //perulangan untuk menampilkan setiap baris hasil query
                          while ($post = mysqli_fetch_assoc($exec)) :
